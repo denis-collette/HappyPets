@@ -7,7 +7,7 @@
 ## 📱 Project Focus
 
 - **Mobile-first design:** Optimized for mobile with plans to support desktop browsers.
-- **Pet-first social experience:** Each user can add multiple pet cards and interact through their pets.
+- **Pet-first social experience:** Each user can add and manage multiple pet cards.
 - **Community building:** Users can meet, chat, and attend or host events such as pet walks or play-dates.
 
 ---
@@ -15,7 +15,7 @@
 ## ✨ Features
 
 - 🔐 Authentication (Sign up / Login)
-- 🐶 Create and manage pet profiles
+- 🐶 Create and manage pet cards
 - 🧑‍🤝‍🧑 Add friends and search pet owners
 - 💬 Chat system (1:1 messaging)
 - 📍 Create and join neighborhood walks and events
