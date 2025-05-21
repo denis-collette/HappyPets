@@ -1,0 +1,30 @@
+<nav class="navbar">
+    <div class="navleft">
+        <!-- If logged in:     -->
+        <div class="loggedin">
+            <ul >
+                <li><a href="/meet">Meet</a></li>
+                <li><a href="/mypets">My pets</a></li>
+                <li><a href="/myfriends">My friends</a></li>
+            </ul>
+
+            <a href="/profile">My profile</a>
+            <a href="/messages">Messages</a>
+            <a href="/notifications">Notifications</a>
+        </div>
+        <!-- If logged out:     -->
+        <div class="loggedout">
+            <a href="/signup">Sign up</a>
+        </div>
+    </div>
+
+    <!-- Always visible (logo?):     -->
+    <a href="/home">Home</a>
+    
+    <div class="navright">
+        <!-- If logged out:     -->
+        <a href="/login" class="loggedin">Log in</a>
+        <!-- If logged in:     -->
+        <a href="/" class="loggedout">Log out</a> 
+    </div>
+</nav>
