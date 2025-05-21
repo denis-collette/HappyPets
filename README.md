@@ -1,6 +1,6 @@
 # 🐾 Happy Pets
 
-**Happy Pets** is a mobile-first social networking app dedicated to our furry friends! Create pet profiles, connect with other pet owners, chat, and organize pet-friendly events—all in one place.
+**Happy Pets** is a mobile-first social networking app dedicated to our furry, scaly, feathery friends! Create pet profiles, connect with other pet owners, chat, and organize pet-friendly events—all in one place.
 
 ---
 
