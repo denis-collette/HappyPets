@@ -79,7 +79,9 @@ HappyPets/
 │   │   └── ...
 │   ├── users/
 │   │   └── ...
-│   └── manage.py
+│   ├── .gitignore
+│   ├── manage.py
+│   └── requirements.txt
 └── README.md
 ```
 
