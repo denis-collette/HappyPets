@@ -3,28 +3,28 @@
         <!-- If logged in:     -->
         <div class="loggedin">
             <ul >
-                <li><a href="/meet">Meet</a></li>
-                <li><a href="/mypets">My pets</a></li>
-                <li><a href="/myfriends">My friends</a></li>
+                <li><a routerLink="/meet" routerLinkActive="active" ariaCurrentWhenActive="page">Meet</a></li>
+                <li><a routerLink="/mypets" routerLinkActive="active" ariaCurrentWhenActive="page">My pets</a></li>
+                <li><a routerLink="/myfriends" routerLinkActive="active" ariaCurrentWhenActive="page">My friends</a></li>
             </ul>
 
-            <a href="/profile">My profile</a>
-            <a href="/messages">Messages</a>
-            <a href="/notifications">Notifications</a>
+            <a routerLink="/profile" routerLinkActive="active" ariaCurrentWhenActive="page">My profile</a>
+            <a routerLink="/messages" routerLinkActive="active" ariaCurrentWhenActive="page">Messages</a>
+            <a routerLink="/notifications" routerLinkActive="active" ariaCurrentWhenActive="page">Notifications</a>
         </div>
         <!-- If logged out:     -->
         <div class="loggedout">
-            <a href="/signup">Sign up</a>
+            <a routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page">Sign up</a>
         </div>
     </div>
 
     <!-- Always visible (logo?):     -->
-    <a href="/home">Home</a>
+    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
     
     <div class="navright">
         <!-- If logged out:     -->
-        <a href="/login" class="loggedin">Log in</a>
+        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" class="loggedin">Log in</a>
         <!-- If logged in:     -->
-        <a href="/" class="loggedout">Log out</a> 
+        <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" class="loggedout">Log out</a> 
     </div>
 </nav>
