@@ -17,9 +17,21 @@
 - 🔐 Authentication (Sign up / Login)
 - 🐶 Create and manage pet cards
 - 🧑‍🤝‍🧑 Add friends and search pet owners
-- 💬 Chat system (1:1 messaging)
-- 📍 Create and join neighborhood walks and events
+- 💬 Chat system (1:1 messaging + attachments, reactions, read status)
+- 📍 Create and join neighborhood walks and events (with map integration)
 - 🖼 Share status updates, photos, and videos (coming soon)
+- 🔐 Privacy controls on user/pet profiles & event visibility
+
+---
+
+## 🧩 Future Features
+
+- 📸 Media sharing and gallery
+- 🐾 Pet timelines and memories
+- 📍 Geolocation of events
+- 🗨️ Group chats
+- 🔔 Push notifications
+- 🎁 Gamification: badges, likes, and pet contests
 
 ---
 
@@ -30,14 +42,27 @@
 - **Angular** (v16+)
 - **Sass** for styling
 - **Angular Router** for SPA navigation
+- **Angular Universal** (SSR enabled)
 
 ### Backend – Django (Python)
 
 - **Django REST Framework** – API layer
-- **PostgreSQL** – Relational data with Django ORM
-- **Django Channels** – For real-time messaging
-- **Amazon S3** – For storing profile images, pet media, and event pictures
-- **SimpleJWT** – For secure token-based authentication
+- **PostgreSQL** – Primary relational database
+- **Django Channels** – Real-time messaging
+- **SimpleJWT** – Secure token-based authentication
+- **Media hosting** – Initially local, future S3-compatible (e.g. Cloudflare R2 or MinIO)
+
+---
+
+## 🎨 Color Palette (Suggestion)
+
+- Primary: #FFB347 (Peach/Orange)
+- Secondary: #FF6F61 (Coral)
+- Accent: #5D9CEC (Sky Blue)
+- Background: #FAFAFA (Light Grey)
+- Text: #333333
+
+Inspired by a playful, warm, and approachable tone suited for pet communities.
 
 ---
 
@@ -69,11 +94,11 @@ HappyPets/
 ├── back/
 │   ├── backend/
 │   │   └── ...
-│   ├── env/
+│   ├── conversations/
 │   │   └── ...
 │   ├── events/
 │   │   └── ...
-│   ├── messages/
+│   ├── inbox/
 │   │   └── ...
 │   ├── pets/
 │   │   └── ...
@@ -110,8 +135,8 @@ Open your browser at [http://localhost:4200](http://localhost:4200)
 ### Backend
 
 ```bash
-cd backend/
-python -m venv env
+cd back/
+python -m venv env # On Linux, it might be python3
 source env/bin/activate  # On Windows use `env\Scripts\activate`
 pip install -r requirements.txt
 
@@ -127,26 +152,42 @@ DJANGO_SECRET_KEY=your_secret_key_here
 DATABASE_URL=postgres://username:password@localhost:5432/happypets
 AWS_ACCESS_KEY_ID=...
 AWS_SECRET_ACCESS_KEY=...
+...
 ```
 
 ---
 
-## 🧩 Future Features
+## 🗺️ Roadmap
 
-- 📸 Media sharing and gallery
-- 🐾 Pet timelines and memories
-- 📍 Geolocation of events
-- 🗨️ Group chats
-- 🔔 Push notifications
-- 🎁 Gamification: badges, likes, and pet contests
+### MVP (Minimum Viable Product)
+- [x] Set up Django & Angular structure
+- [x] Create core apps: users, pets, events, messages, chat
+- [ ] Enable authentication (JWT)
+- [ ] Basic UI routing & navigation
+- [ ] Display mock user & pet profiles
+- [ ] Simple chat & event listing (no real-time yet)
+
+### Phase 2
+- [ ] Connect backend auth to frontend
+- [ ] Implement real chat system (w/ read status, emojis, attachments)
+- [ ] Add map for "meet" events (e.g. Leaflet.js or Google Maps)
+- [ ] Toggle profile/event visibility
+- [ ] Style UI with Sass and theme colors
+
+### Later
+- [ ] Media uploads (local -> scalable S3-compatible)
+- [ ] Push notifications
+- [ ] Pet memories and gallery
+- [ ] Gamification features
 
 ---
 
 ## 🛡️ Security & Privacy
 
-- JWT token-based authentication (SimpleJWT)
+- JWT token-based authentication
 - GDPR-compliant data handling
-- Optional profile visibility (private/public)
+- Optional profile/event visibility
+- Message visibility filters (e.g. messages from friends only)
 
 ---
 
