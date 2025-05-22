@@ -2,6 +2,11 @@
     <div class="navbar-left">
         <button class="burger" *ngIf="isLoggedIn" (click)="toggleMenu()">☰</button>
         <button *ngIf="!isLoggedIn" routerLink="/signup" class="nav-btn">Sign up</button>
+        <ul class="nav-links" *ngIf="isLoggedIn">
+            <li><a routerLink="/meet" routerLinkActive="active">Meet</a></li>
+            <li><a routerLink="/mypets" routerLinkActive="active">My Pets</a></li>
+            <li><a routerLink="/myfriends" routerLinkActive="active">My Friends</a></li>
+        </ul>
     </div>
 
     <a routerLink="/home" class="logo" aria-label="Happy Pets Home">
@@ -13,9 +18,9 @@
         <a *ngIf="!isLoggedIn" routerLink="/login" class="nav-btn">
             <i class="fas fa-power-off"></i>
         </a>
-        <a *ngIf="isLoggedIn" (click)="logout()" class="logout">
+        <button *ngIf="isLoggedIn" (click)="logout()" class="logout">
             <i class="fas fa-power-off"></i>
-        </a>
+        </button>
     </div>
 
     <div class="side-panel" [class.open]="menuOpen" *ngIf="isLoggedIn">

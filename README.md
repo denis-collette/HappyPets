@@ -56,9 +56,9 @@
 
 ## 🎨 Color Palette
 
-- Primary: #FFB347 (Peach/Orange)
+- Primary: #FFB570 (Peach/Orange)
 - Secondary: #FF6F61 (Coral)
-- Accent: #5D9CEC (Sky Blue)
+- Accent: #3BACAF (Blue)
 - Background: #FAFAFA (Light Grey)
 - Text: #333333
 

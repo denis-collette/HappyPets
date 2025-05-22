@@ -1,28 +1,21 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  standalone: false,
   templateUrl: './login.component.html',
-  styleUrl: './login.component.sass'
+  styleUrl: './login.component.sass',
 })
 export class LoginComponent {
-  isLoggedIn: boolean = false;
-
-  updateLoginStatus() {
-    if (typeof window !== 'undefined') {
-      this.isLoggedIn = !!localStorage.getItem('accessToken');
-    }
-  }
+  constructor(private authService: AuthService) {}
 
   toggleLoginState() {
-    if (typeof window !== 'undefined') {
-      if (localStorage.getItem('accessToken')) {
-        localStorage.removeItem('accessToken');
-      } else {
-        localStorage.setItem('accessToken', 'mockToken');
-      }
+    const isLoggedIn = !!localStorage.getItem('accessToken');
+    if (isLoggedIn) {
+      this.authService.logout();
+    } else {
+      this.authService.login();
     }
-    this.updateLoginStatus();
   }
 }
