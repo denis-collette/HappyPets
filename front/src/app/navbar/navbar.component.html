@@ -1,30 +1,36 @@
 <nav class="navbar">
-    <div class="navleft">
-        <!-- If logged in:     -->
-        <div class="loggedin">
-            <ul >
-                <li><a routerLink="/meet" routerLinkActive="active" ariaCurrentWhenActive="page">Meet</a></li>
-                <li><a routerLink="/mypets" routerLinkActive="active" ariaCurrentWhenActive="page">My pets</a></li>
-                <li><a routerLink="/myfriends" routerLinkActive="active" ariaCurrentWhenActive="page">My friends</a></li>
-            </ul>
-
-            <a routerLink="/profile" routerLinkActive="active" ariaCurrentWhenActive="page">My profile</a>
-            <a routerLink="/messages" routerLinkActive="active" ariaCurrentWhenActive="page">Messages</a>
-            <a routerLink="/notifications" routerLinkActive="active" ariaCurrentWhenActive="page">Notifications</a>
-        </div>
-        <!-- If logged out:     -->
-        <div class="loggedout">
-            <a routerLink="/signup" routerLinkActive="active" ariaCurrentWhenActive="page">Sign up</a>
-        </div>
+    <div class="navbar-left">
+        <button class="burger" *ngIf="isLoggedIn" (click)="toggleMenu()">☰</button>
+        <button *ngIf="!isLoggedIn" routerLink="/signup" class="nav-btn">Sign up</button>
     </div>
 
-    <!-- Always visible (logo?):     -->
-    <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-    
-    <div class="navright">
-        <!-- If logged out:     -->
-        <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page" class="loggedin">Log in</a>
-        <!-- If logged in:     -->
-        <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page" class="loggedout">Log out</a> 
+    <a routerLink="/home" class="logo" aria-label="Happy Pets Home">
+        <img src="assets/HappyPetsV3.2.png" alt="Happy Pets logo" />
+        <span class="brand-text">Happy Pets</span>
+    </a>
+
+    <div class="navbar-right">
+        <a *ngIf="!isLoggedIn" routerLink="/login" class="nav-btn">
+            <i class="fas fa-power-off"></i>
+        </a>
+        <a *ngIf="isLoggedIn" (click)="logout()" class="logout">
+            <i class="fas fa-power-off"></i>
+        </a>
+    </div>
+
+    <div class="side-panel" [class.open]="menuOpen" *ngIf="isLoggedIn">
+        <ul>
+            <li><a routerLink="/meet" routerLinkActive="active">Meet</a></li>
+            <li><a routerLink="/mypets" routerLinkActive="active">My pets</a></li>
+            <li><a routerLink="/myfriends" routerLinkActive="active">My friends</a></li>
+        </ul>
+        <div class="bottom-icons">
+            <a routerLink="/profile"><i class="fas fa-user"></i></a>
+            <a routerLink="/messages"><i class="fas fa-envelope"></i></a>
+            <a routerLink="/notifications"><i class="fas fa-bell"></i></a>
+            <button class="mode-toggle" (click)="toggleDarkMode()" aria-label="Toggle Dark Mode">
+                <i class="fas" [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"></i>
+            </button>
+        </div>
     </div>
 </nav>

@@ -54,7 +54,7 @@
 
 ---
 
-## 🎨 Color Palette (Suggestion)
+## 🎨 Color Palette
 
 - Primary: #FFB347 (Peach/Orange)
 - Secondary: #FF6F61 (Coral)
@@ -66,30 +66,53 @@ Inspired by a playful, warm, and approachable tone suited for pet communities.
 
 ---
 
-## 📁 Project Structure (Frontend)
+## 📁 Project Structure
 
 ```
 HappyPets/
 ├── front/
 │   ├── src/
-│   │   └── app/
-│   │       ├── AdminSettings/
-│   │       │   ├── login/
-│   │       │   ├── messages/
-│   │       │   └── notifications/
-│   │       ├── Events/
-│   │       │   ├── eventcard/
-│   │       │   └── meet/
-│   │       ├── home/
-│   │       ├── Human/
-│   │       │   ├── humancard/
-│   │       │   ├── myfriends/
-│   │       │   └── profile/
-│   │       ├── navbar/
-│   │       ├── Pets/
-│   │       │   ├── mypets/
-│   │       │   └── petcard/
-│   │       └── searchbar/
+│   │   ├── _styles/
+│   │   │   ├── _base.sass
+│   │   │   ├── _layout.sass
+│   │   │   ├── _mixins.sass
+│   │   │   ├── _responsive.sass
+│   │   │   ├── _typography.sass
+│   │   │   └── _variables.sass
+│   │   ├── app/
+│   │   │   ├── AdminSettings/
+│   │   │   │   ├── login/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── messages/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── notifications/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── signup/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── Events/
+│   │   │   │   ├── eventcard/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── meet/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── home/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── Human/
+│   │   │   │   ├── humancard/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── myfriends/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── profile/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── navbar/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── Pets/
+│   │   │   │   ├── mypets/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── petcard/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── searchbar/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── app.component.html
+│   │   │   ├── app.component.sass
+│   │   │   ├── app.component.spec.ts
+│   │   │   ├── app.component.ts
+│   │   │   ├── app.config.server.ts
+│   │   │   ├── app.config.ts
+│   │   │   ├── app.routes.server.ts
+│   │   │   └── app.routes.ts
+│   │   ├── assets/
+│   │   │   └──...
+│   │   ├── index.html
+│   │   ├── main.server.ts
+│   │   ├── main.ts
+│   │   ├── server.ts
+│   │   └── styles.sass
 │   └── ...
 ├── back/
 │   ├── backend/

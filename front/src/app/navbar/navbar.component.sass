@@ -1,0 +1,131 @@
+@use '../../_styles/variables'
+@use '../../_styles/mixins'
+
+*
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  box-sizing: border-box
+
+.navbar
+  display: flex
+  align-items: center
+  justify-content: space-between
+  background-color: variables.$primary-color
+  padding: variables.$space-sm variables.$space-md
+  color: white
+  position: relative
+  top: 0
+  height: 70px
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1)
+
+  a
+    color: white
+    font-weight: bold
+    text-decoration: none
+    transition: transform 0.2s ease, opacity 0.2s ease
+
+.navbar-left,
+.navbar-right
+  display: flex
+  align-items: center
+  max-width: 33%
+  flex: 1
+  gap: variables.$space-sm
+
+.navbar-right
+  justify-content: flex-end
+
+.logo
+  position: absolute
+  left: 50%
+  transform: translateX(-50%)
+  display: flex
+  align-items: center
+  text-align: center
+  white-space: nowrap
+
+  img
+    height: 40px
+    display: block
+
+  .brand-text
+    font-family: 'Chango', cursive
+    font-size: 1rem
+    font-weight: normal
+    margin-left: variables.$space-sm
+    color: white
+    line-height: 1
+
+    @include mixins.respond-to(tablet)
+      font-size: 2rem
+
+    @include mixins.respond-to(desktop)
+      font-size: 2rem
+
+.burger
+  display: block
+  font-size: 2rem
+  background: none
+  border: none
+  color: white
+  z-index: 101
+  cursor: pointer
+  margin-right: variables.$space-xs
+
+.nav-btn, .logout
+  padding: 0.3rem 0.6rem
+  display: flex
+  align-items: center
+  justify-content: center
+  font-size: 1.3rem
+  background: none
+  border: none
+  color: white
+  cursor: pointer
+
+.side-panel
+  position: fixed
+  top: 0
+  left: 0
+  height: 100%
+  width: 80%
+  max-width: 300px
+  background-color: variables.$primary-color
+  transform: translateX(-100%)
+  transition: transform 0.3s ease
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  padding: variables.$space-md
+
+  &.open
+    transform: translateX(0)
+
+  ul
+    list-style: none
+    padding: 0
+    margin: 0
+    display: flex
+    flex-direction: column
+    gap: variables.$space-sm
+
+  .bottom-icons
+    display: flex
+    justify-content: space-around
+    align-items: center
+    padding-top: variables.$space-md
+    border-top: 1px solid rgba(255, 255, 255, 0.2)
+
+    a, .mode-toggle
+      color: white
+      font-size: 1.4rem
+      background: none
+      border: none
+      cursor: pointer
+
+@include mixins.respond-to(desktop)
+  .burger
+    display: none !important
+
+  .side-panel
+    display: none

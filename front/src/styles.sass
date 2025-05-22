@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@use './_styles/variables'
+@use './_styles/mixins'
+@use './_styles/base'
+@use './_styles/layout'
+@use './_styles/typography'
+@use './_styles/responsive'
+
+body
+  font-family: variables.$font-body
+  color: variables.$text-color
+
+h1, h2, h3, h4, h5, h6
+  font-family: variables.$font-heading
+
+button, .cta
+  font-family: variables.$font-cta
+  font-weight: bold
+
+.font-brand
+  font-family: variables.$font-brand
+
+.font-heading
+  font-family: variables.$font-heading
+
+.font-cta
+  font-family: variables.$font-cta
