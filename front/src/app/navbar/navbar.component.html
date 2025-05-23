@@ -1,11 +1,15 @@
 <nav class="navbar">
     <div class="navbar-left">
-        <button class="burger" *ngIf="isLoggedIn" (click)="toggleMenu()">☰</button>
-        <button *ngIf="!isLoggedIn" routerLink="/signup" class="nav-btn">Sign up</button>
+        <button class="burger" *ngIf="isLoggedIn && !menuOpen" (click)="toggleMenu()">☰</button>
+        <button *ngIf="!isLoggedIn" routerLink="/signup" class="nav-btn">
+        Sign up
+        </button>
         <ul class="nav-links" *ngIf="isLoggedIn">
             <li><a routerLink="/meet" routerLinkActive="active">Meet</a></li>
             <li><a routerLink="/mypets" routerLinkActive="active">My Pets</a></li>
-            <li><a routerLink="/myfriends" routerLinkActive="active">My Friends</a></li>
+            <li>
+                <a routerLink="/myfriends" routerLinkActive="active">My Friends</a>
+            </li>
         </ul>
     </div>
 
@@ -24,18 +28,24 @@
     </div>
 
     <div class="side-panel" [class.open]="menuOpen" *ngIf="isLoggedIn">
+        <button *ngIf="menuOpen" class="close-btn" (click)="closeMenu()">✖</button>
         <ul>
-            <li><a routerLink="/meet" routerLinkActive="active">Meet</a></li>
-            <li><a routerLink="/mypets" routerLinkActive="active">My pets</a></li>
-            <li><a routerLink="/myfriends" routerLinkActive="active">My friends</a></li>
+            <li><a routerLink="/meet" routerLinkActive="active" (click)="closeMenu()">Meet</a></li>
+            <li><a routerLink="/mypets" routerLinkActive="active" (click)="closeMenu()">My pets</a></li>
+            <li><a routerLink="/myfriends" routerLinkActive="active" (click)="closeMenu()">My friends</a></li>
         </ul>
         <div class="bottom-icons">
-            <a routerLink="/profile"><i class="fas fa-user"></i></a>
-            <a routerLink="/messages"><i class="fas fa-envelope"></i></a>
-            <a routerLink="/notifications"><i class="fas fa-bell"></i></a>
-            <button class="mode-toggle" (click)="toggleDarkMode()" aria-label="Toggle Dark Mode">
+            <a routerLink="/profile" (click)="closeMenu()"><i class="fas fa-user"></i></a>
+            <a routerLink="/messages" (click)="closeMenu()"><i class="fas fa-envelope"></i></a>
+            <a routerLink="/notifications" (click)="closeMenu()"><i class="fas fa-bell"></i></a>
+            <!-- <button
+                class="mode-toggle"
+                (click)="toggleDarkMode()"
+                aria-label="Toggle Dark Mode"
+            >
                 <i class="fas" [ngClass]="isDarkMode ? 'fa-sun' : 'fa-moon'"></i>
-            </button>
+            </button> -->
         </div>
     </div>
+    <div class="overlay" *ngIf="menuOpen" (click)="closeMenu()"></div>
 </nav>

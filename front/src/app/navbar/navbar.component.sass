@@ -72,6 +72,17 @@
   cursor: pointer
   margin-right: variables.$space-xs
 
+.close-btn
+  position: fixed
+  top: variables.$space-sm
+  right: variables.$space-sm
+  font-size: 2rem
+  background: none
+  border: none
+  color: white
+  z-index: 102
+  cursor: pointer
+
 .nav-btn, .logout
   padding: 0.3rem 0.6rem
   display: flex
@@ -97,6 +108,7 @@
   flex-direction: column
   justify-content: space-between
   padding: variables.$space-md
+  z-index: 100
 
   &.open
     transform: translateX(0)
@@ -108,6 +120,17 @@
     display: flex
     flex-direction: column
     gap: variables.$space-sm
+
+    li a
+      padding: 0.8rem
+      font-size: 1.2rem
+      color: white
+      text-decoration: none
+      text-align: left
+      display: block
+
+      &:hover
+        opacity: 0.8
 
   .bottom-icons
     display: flex
@@ -146,3 +169,12 @@
 
   .side-panel
     display: none
+
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(0, 0, 0, 0.5)
+  z-index: 99

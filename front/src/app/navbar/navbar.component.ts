@@ -19,6 +19,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
 
   constructor(private router: Router, private authService: AuthService) {}
 
+  closeMenu() {
+    this.menuOpen = false;
+  }
+
   ngOnInit(): void {
     this.sub = this.authService.isLoggedIn$.subscribe(
       (status) => (this.isLoggedIn = status)
