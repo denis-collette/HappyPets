@@ -137,6 +137,46 @@ HappyPets/
 
 ## 🧪 Running the App Locally
 
+### If not done yet, create the local DB
+
+If you have PostgreSQL installed, you can connect to it using the psql command.
+```bash
+psql -U postgres  # or psql -U <your_user>
+```
+If you are prompted for a password, enter the password you set for the postgres user.
+
+List databases
+```bash
+\l
+```
+
+List users
+```bash
+\du
+```
+
+Exit with:
+```bash
+\q
+```
+
+If you want to create a new database and user, you can do so with the following commands:
+```bash
+CREATE DATABASE happypets;
+CREATE USER postgres WITH PASSWORD 'happypets';
+GRANT ALL PRIVILEGES ON DATABASE happypets TO postgres;
+```
+
+Drop databases you don't want:
+```bash
+DROP DATABASE old_db_name;
+```
+
+Drop users you no longer need:
+```bash
+DROP USER old_username;
+```
+
 ### Prerequisites
 
 - Node.js
