@@ -141,7 +141,7 @@ HappyPets/
 
 If you have PostgreSQL installed, you can connect to it using the psql command.
 ```bash
-psql -U postgres  # or psql -U <your_user>
+psql -U postgres  # or psql -U <your_user> # may need to use "sudo -u postgres psql" on Linux
 ```
 If you are prompted for a password, enter the password you set for the postgres user.
 
@@ -163,8 +163,8 @@ Exit with:
 If you want to create a new database and user, you can do so with the following commands:
 ```bash
 CREATE DATABASE happypets;
-CREATE USER postgres WITH PASSWORD 'happypets';
-GRANT ALL PRIVILEGES ON DATABASE happypets TO postgres;
+CREATE USER user_name WITH PASSWORD 'your_password';
+GRANT ALL PRIVILEGES ON DATABASE happypets TO user_name;
 ```
 
 Drop databases you don't want:
@@ -175,6 +175,11 @@ DROP DATABASE old_db_name;
 Drop users you no longer need:
 ```bash
 DROP USER old_username;
+```
+
+Change password of a user:
+```bash
+ALTER ROLE user_name WITH PASSWORD 'your_new_password';
 ```
 
 ### Prerequisites
@@ -202,7 +207,8 @@ cd back/
 python -m venv env # On Linux, it might be python3
 source env/bin/activate  # On Windows use `env\Scripts\activate`
 pip install -r requirements.txt
-
+# Don't forget to create a superuser if not done yet (should be done in shared DB): 
+python manage.py createsuperuser
 python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
