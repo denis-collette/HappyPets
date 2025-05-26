@@ -234,11 +234,21 @@ python manage.py runserver
 - [ ] Toggle profile/event visibility
 - [ ] Style UI with Sass and theme colors
 
+### Phase 3: Real-time & Advanced Features
+- [ ] Setup Redis and Django Channels
+- [ ] WebSocket auth with JWT
+- [ ] Typing indicators and read receipts
+- [ ] Inbox system (conversations, messages, attachments)
+- [ ] Events with geolocation
+- [ ] Visibility filters for profiles/events
+
 ### Later
 - [ ] Media uploads (local -> scalable S3-compatible)
 - [ ] Push notifications
 - [ ] Pet memories and gallery
 - [ ] Gamification features
+- [ ] Admin panel customization
+- [ ] Unit tests and API documentation
 
 ---
 
