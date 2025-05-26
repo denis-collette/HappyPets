@@ -1,23 +1,33 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
-import { MeetComponent } from './Events/meet/meet.component';
-import { MypetsComponent } from './Pets/mypets/mypets.component';
-import { MyfriendsComponent } from './Human/myfriends/myfriends.component';
-import { ProfileComponent } from './Human/profile/profile.component';
-import { MessagesComponent } from './AdminSettings/messages/messages.component';
-import { NotificationsComponent } from './AdminSettings/notifications/notifications.component';
-import { LoginComponent } from './AdminSettings/login/login.component';
-import { SignupComponent } from './AdminSettings/signup/signup.component';
 
 export const routes: Routes = [
-    { path: '', component: HomeComponent },
-    { path: 'home', component: HomeComponent },
-    { path: 'meet', component: MeetComponent },
-    { path: 'mypets', component: MypetsComponent },
-    { path: 'myfriends', component: MyfriendsComponent },
-    { path: 'profile', component: ProfileComponent },
-    { path: 'messages', component: MessagesComponent },
-    { path: 'notifications', component: NotificationsComponent },
-    { path: 'login', component: LoginComponent },
-    { path: 'signup', component: SignupComponent },
+    { path: '',
+        loadComponent: () => import('./home/home.component')
+        .then(m => m.HomeComponent) },
+    { path: 'home',
+        loadComponent: () => import('./home/home.component')
+        .then(m => m.HomeComponent) },
+    { path: 'meet',
+        loadComponent: () => import('./Events/meet/meet.component')
+        .then(m => m.MeetComponent) },
+    { path: 'mypets',
+        loadComponent: () => import('./Pets/mypets/mypets.component')
+        .then(m => m.MypetsComponent) },
+    { path: 'myfriends',
+        loadComponent: () => import('./Human/myfriends/myfriends.component')
+        .then(m => m.MyfriendsComponent) },
+    { path: 'profile',
+        loadComponent: () => import('./Human/profile/profile.component')
+        .then(m => m.ProfileComponent) },
+    { path: 'messages',
+        loadComponent: () => import('./AdminSettings/messages/messages.component')
+        .then(m => m.MessagesComponent) },
+    { path: 'notifications',
+        loadComponent: () => import('./AdminSettings/notifications/notifications.component').then(m => m.NotificationsComponent) },
+    { path: 'login',
+        loadComponent: () => import('./AdminSettings/login/login.component')
+        .then(m => m.LoginComponent) },
+    { path: 'signup',
+        loadComponent: () => import('./AdminSettings/signup/signup.component')
+        .then(m => m.SignupComponent) },
 ];

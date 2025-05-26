@@ -4,6 +4,7 @@ import { HumancardComponent } from '../humancard/humancard.component';
 
 @Component({
   selector: 'app-profile',
+  standalone: true,
   imports: [PetcardComponent, HumancardComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.sass'
