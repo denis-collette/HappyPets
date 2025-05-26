@@ -88,7 +88,6 @@ HappyPets/
 │   │   │   ├── Events/
 │   │   │   │   ├── eventcard/      # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   └── meet/           # Component: .html + .sass + .spec.ts + .ts
-│   │   │   ├── home/               # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── Human/
 │   │   │   │   ├── humancard/      # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   ├── myfriends/      # Component: .html + .sass + .spec.ts + .ts
@@ -97,6 +96,9 @@ HappyPets/
 │   │   │   ├── Pets/
 │   │   │   │   ├── mypets/         # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   └── petcard/        # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── Shared/
+│   │   │   │   ├── home/           # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── not
 │   │   │   ├── searchbar/          # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── app.component.html
 │   │   │   ├── app.component.sass

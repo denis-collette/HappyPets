@@ -50,7 +50,7 @@
 
   .brand-text
     font-family: 'Chango', cursive
-    font-size: 1rem
+    font-size: 0.8rem
     font-weight: normal
     margin-left: variables.$space-sm
     color: white
@@ -84,15 +84,18 @@
   cursor: pointer
 
 .nav-btn, .logout
-  padding: 0.3rem 0.6rem
-  display: flex
-  align-items: center
-  justify-content: center
-  font-size: 1.3rem
-  background: none
-  border: none
+  padding: 0.5rem 1rem
+  font-size: 1rem
+  background-color: rgba(255, 255, 255, 0.15)
+  border: 1px solid rgba(255, 255, 255, 0.3)
+  border-radius: 8px
   color: white
   cursor: pointer
+  transition: background-color 0.2s ease, opacity 0.2s ease
+
+  &:hover
+    background-color: rgba(255, 255, 255, 0.25)
+    opacity: 0.9
 
 .side-panel
   position: fixed
@@ -116,21 +119,27 @@
   ul
     list-style: none
     padding: 0
-    margin: 0
+    margin: variables.$space-xxxl 0 0
     display: flex
     flex-direction: column
-    gap: variables.$space-sm
+    gap: variables.$space-lg
 
     li a
-      padding: 0.8rem
-      font-size: 1.2rem
+      padding: 1rem 2rem 1rem 2rem
+      font-size: 1.1rem
       color: white
+      background-color: rgba(255, 255, 255, 0.1)
+      border-radius: 6px
+      border: 1px solid rgba(255, 255, 255, 0.2)
       text-decoration: none
-      text-align: left
-      display: block
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: background-color 0.2s ease, opacity 0.2s ease
 
       &:hover
-        opacity: 0.8
+        background-color: rgba(255, 255, 255, 0.2)
+        opacity: 0.9
 
   .bottom-icons
     display: flex
@@ -142,14 +151,69 @@
     a, .mode-toggle
       color: white
       font-size: 1.4rem
-      background: none
-      border: none
+      background-color: rgba(255, 255, 255, 0.15)
+      border-radius: 6px
+      padding: 0.4rem 0.8rem
+      border: 1px solid rgba(255, 255, 255, 0.3)
       cursor: pointer
+      transition: background-color 0.2s ease, opacity 0.2s ease
+
+      &:hover
+        background-color: rgba(255, 255, 255, 0.25)
+        opacity: 0.9
 
 .nav-links
   display: none
 
-  @include mixins.respond-to(desktop)
+.nav-links li a
+  padding: 0.4rem 0.8rem
+  font-size: 1rem
+  background-color: rgba(255, 255, 255, 0.15)
+  border-radius: 6px
+  transition: background-color 0.2s ease, opacity 0.2s ease
+
+  &:hover
+    background-color: rgba(255, 255, 255, 0.25)
+    opacity: 0.9
+
+.desktop-icons a
+  padding: 0.4rem
+  background-color: rgba(255, 255, 255, 0.15)
+  border-radius: 6px
+  border: 1px solid rgba(255, 255, 255, 0.3)
+  transition: background-color 0.2s ease, opacity 0.2s ease
+
+  &:hover
+    background-color: rgba(255, 255, 255, 0.25)
+    opacity: 0.9
+
+.desktop-icons
+  display: none
+  gap: variables.$space-sm
+  align-items: center
+  margin-right: variables.$space-sm
+
+  a
+    color: white
+    font-size: 1.4rem
+    transition: opacity 0.2s ease
+
+    &:hover
+      opacity: 0.8
+
+@include mixins.respond-to(desktop)
+  .desktop-icons
+    display: flex
+    gap: variables.$space-md
+    margin-right: variables.$space-sm
+
+  .burger
+    display: none !important
+
+  .side-panel
+    display: none
+
+  .nav-links
     display: flex
     gap: variables.$space-md
     list-style: none
@@ -158,17 +222,11 @@
       color: white
       font-weight: bold
       text-decoration: none
+      border: 1px solid rgba(255, 255, 255, 0.3)
       transition: transform 0.2s ease, opacity 0.2s ease
 
       &:hover
         opacity: 0.8
-
-@include mixins.respond-to(desktop)
-  .burger
-    display: none !important
-
-  .side-panel
-    display: none
 
 .overlay
   position: fixed

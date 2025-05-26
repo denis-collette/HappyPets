@@ -7,7 +7,7 @@ export class AuthService {
 
     isLoggedIn$ = this.loggedIn.asObservable();
 
-    private hasToken(): boolean {
+    public hasToken(): boolean {
         return typeof window !== 'undefined' && !!localStorage.getItem('accessToken');
     }
 

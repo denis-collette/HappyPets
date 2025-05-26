@@ -19,12 +19,20 @@
     </a>
 
     <div class="navbar-right">
+        <ng-container *ngIf="isLoggedIn">
+            <div class="desktop-icons">
+                <a routerLink="/profile"><i class="fas fa-user"></i></a>
+                <a routerLink="/messages"><i class="fas fa-envelope"></i></a>
+                <a routerLink="/notifications"><i class="fas fa-bell"></i></a>
+            </div>
+            <button (click)="logout()" class="logout">
+                <i class="fas fa-power-off"></i>
+            </button>
+        </ng-container>
+
         <a *ngIf="!isLoggedIn" routerLink="/login" class="nav-btn">
             <i class="fas fa-power-off"></i>
         </a>
-        <button *ngIf="isLoggedIn" (click)="logout()" class="logout">
-            <i class="fas fa-power-off"></i>
-        </button>
     </div>
 
     <div class="side-panel" [class.open]="menuOpen" *ngIf="isLoggedIn">
