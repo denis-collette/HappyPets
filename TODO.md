@@ -4,132 +4,132 @@
 
 ### Environment config
 
-Setup .env with Django secret, DB, media path, etc.
+- [x] Setup .env with Django secret, DB, media path, etc.
 
-Use django-environ to load these settings securely
+- [x] Use django-environ to load these settings securely
 
 ### Authentication
 
-Install and configure djangorestframework-simplejwt
+- [x] Install and configure djangorestframework-simplejwt
 
-Create endpoints:
+- [x] Create endpoints:
 
-- /api/token/ (login)
+    - /api/token/ (login)
 
-- /api/token/refresh/
+    - /api/token/refresh/
 
-- /api/register/ (custom user signup)
+    - /api/register/ (custom user signup)
 
 ### User System
 
-Extend AbstractUser for a custom user model
+- [x] Extend AbstractUser for a custom user model
 
-Create UserSerializer, UserViewSet
+- [ ] Create UserSerializer, UserViewSet
 
-Add friend relationship model (ManyToMany through model)
+- [ ] Add friend relationship model (ManyToMany through model)
 
-Create API endpoints for:
+- [ ] Create API endpoints for:
 
-- User detail/profile update
+    - User detail/profile update
 
-- Friend list & search
+    - Friend list & search
 
 ### Pets
 
-Define Pet model (FK to User, name, species, avatar, etc.)
+- [ ] Define Pet model (FK to User, name, species, avatar, etc.)
 
-Create serializer, viewset
+- [ ] Create serializer, viewset
 
-Endpoints:
+- [ ] Endpoints:
 
-- List pets (by user)
+    - List pets (by user)
 
-- Create/edit/delete pet
+    - Create/edit/delete pet
 
 ### Events
 
-Define event model: title, date, location, description, visibility
+- [ ] Define event model: title, date, location, description, visibility
 
-Add optional FK to Pet or User (host)
+- [ ] Add optional FK to Pet or User (host)
 
-Endpoints:
+- [ ] Endpoints:
 
-- List events (all/nearby)
+    - List events (all/nearby)
 
-- Create/edit/join event
+    - Create/edit/join event
 
 ### Integrate with Angular Frontend
 
-Create /api/ prefix for all REST routes
+- [ ] Create /api/ prefix for all REST routes
 
-Allow CORS for frontend dev origin (localhost:4200)
+- [ ] Allow CORS for frontend dev origin (localhost:4200)
 
-Test JWT token exchange via frontend
+- [ ] Test JWT token exchange via frontend
 
 ## 📍 Phase 2: Real-time & Advanced Features
 
 ### Django Channels
 
-Install, set up Redis for channel layer
+- [ ] Install, set up Redis for channel layer
 
-Define consumers for 1:1 messaging
+- [ ] Define consumers for 1:1 messaging
 
-Use WebSocket auth via JWT
+- [ ] Use WebSocket auth via JWT
 
-Add typing/read indicators
+- [ ] Add typing/read indicators
 
 ### Inbox/Messaging
 
-Models:
+- [ ] Models:
 
-- Conversation (participants, last_updated)
+    - Conversation (participants, last_updated)
 
-- Message (FK to conversation, sender, content, timestamp, attachments)
+    - Message (FK to conversation, sender, content, timestamp, attachments)
 
-Create API endpoints (non-real-time fallback)
+- [ ] Create API endpoints (non-real-time fallback)
 
-Enable file/image attachment storage
+- [ ] Enable file/image attachment storage
 
 ### Map Integration for Events
 
-Add lat/lng fields to events
+- [ ] Add lat/lng fields to events
 
-Optional integration with frontend Leaflet/Maps API
+- [ ] Optional integration with frontend Leaflet/Maps API
 
 ### Profile/Event Visibility
 
-Add visibility (public/friends-only/private)
+- [ ] Add visibility (public/friends-only/private)
 
-Apply logic to list views based on JWT user context
+- [ ] Apply logic to list views based on JWT user context
 
 ## 📍 Phase 3: Media, Settings, Admin
 
 ### Media Upload
 
-Use MEDIA_ROOT for local testing
+- [ ] Use MEDIA_ROOT for local testing
 
-Prepare for migration to S3-compatible storage later
+- [ ] Prepare for migration to S3-compatible storage later
 
 ### Admin Panel
 
-Register all models with Django Admin
+- [ ] Register all models with Django Admin
 
-Customize list display for users/pets/events/messages
+- [ ] Customize list display for users/pets/events/messages
 
 ### Testing
 
-Add basic pytest or unittest coverage for:
+- [ ] Add basic pytest or unittest coverage for:
 
-- Authentication
+    - Authentication
 
-- Pet CRUD
+    - Pet CRUD
 
-- Event logic
+    - Event logic
 
-- Permissions
+    - Permissions
 
 ### Documentation
 
-Use drf-spectacular or drf-yasg to auto-generate OpenAPI docs
+- [ ] Use drf-spectacular or drf-yasg to auto-generate OpenAPI docs
 
-Provide frontend with swagger.json
+- [ ] Provide frontend with swagger.json

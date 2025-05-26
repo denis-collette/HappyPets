@@ -81,23 +81,23 @@ HappyPets/
 │   │   │   └── _variables.sass
 │   │   ├── app/
 │   │   │   ├── AdminSettings/
-│   │   │   │   ├── login/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   ├── messages/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   ├── notifications/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   └── signup/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── login/          # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── messages/       # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── notifications/  # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── signup/         # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── Events/
-│   │   │   │   ├── eventcard/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   └── meet/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   ├── home/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── eventcard/      # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── meet/           # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── home/               # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── Human/
-│   │   │   │   ├── humancard/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   ├── myfriends/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   └── profile/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   ├── navbar/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── humancard/      # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── myfriends/      # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── profile/        # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── navbar/             # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── Pets/
-│   │   │   │   ├── mypets/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   └── petcard/ # Component: .html + .sass + .spec.ts + .ts
-│   │   │   ├── searchbar/ # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── mypets/         # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── petcard/        # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── searchbar/          # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── app.component.html
 │   │   │   ├── app.component.sass
 │   │   │   ├── app.component.spec.ts
@@ -114,19 +114,19 @@ HappyPets/
 │   │   ├── server.ts
 │   │   └── styles.sass
 │   └── ...
-├── back/
-│   ├── backend/
-│   │   └── ...
-│   ├── conversations/
-│   │   └── ...
-│   ├── events/
-│   │   └── ...
-│   ├── inbox/
-│   │   └── ...
-│   ├── pets/
-│   │   └── ...
-│   ├── users/
-│   │   └── ...
+├── back/ # ! ADD THE SHARED .ENV IN THIS FOLDER ALONGSIDE MANAGE.PY !
+│   ├── backend/ 
+│   │   ├── __pycache__/
+│   │   ├── __init__.py
+│   │   ├── asgi.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   └── wsgi.py
+│   ├── conversations/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views 
+│   ├── events/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views 
+│   ├── inbox/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
+│   ├── pets/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
+│   ├── users/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
 │   ├── .gitignore
 │   ├── manage.py
 │   └── requirements.txt
@@ -214,24 +214,15 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-Set up `.env` with variables like:
-
-```
-DJANGO_SECRET_KEY=your_secret_key_here
-DATABASE_URL=postgres://username:password@localhost:5432/happypets
-AWS_ACCESS_KEY_ID=...
-AWS_SECRET_ACCESS_KEY=...
-...
-```
-
 ---
 
 ## 🗺️ Roadmap
 
 ### MVP (Minimum Viable Product)
 - [x] Set up Django & Angular structure
+- [x] Create local database
 - [x] Create core apps: users, pets, events, messages, chat
-- [ ] Enable authentication (JWT)
+- [x] Enable authentication (JWT)
 - [ ] Basic UI routing & navigation
 - [ ] Display mock user & pet profiles
 - [ ] Simple chat & event listing (no real-time yet)
