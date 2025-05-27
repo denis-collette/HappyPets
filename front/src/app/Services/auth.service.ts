@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, of, tap, catchError, map } from 'rxjs';
+import { UserApi, LoginResponse } from '../api/user.api';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -7,15 +8,22 @@ export class AuthService {
 
     isLoggedIn$ = this.loggedIn.asObservable();
 
+    constructor(private UserApi: UserApi) {}
+
     public hasToken(): boolean {
         return typeof window !== 'undefined' && !!localStorage.getItem('accessToken');
     }
 
-    login() {
-        if (typeof window !== 'undefined') {
-        localStorage.setItem('accessToken', 'mockToken');
-        this.loggedIn.next(true);
-        }
+    login(username: string, password: string): Observable<boolean> {
+        return this.UserApi.login(username, password).pipe(
+            tap((res: LoginResponse) => {
+                localStorage.setItem('accessToken', res.access);
+                localStorage.setItem('refreshToken', res.refresh);
+                this.loggedIn.next(true);
+            }),
+            map(() => true),
+            catchError(() => of(false))
+        );
     }
 
     logout() {

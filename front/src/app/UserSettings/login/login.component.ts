@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpClient } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
 import { CommonModule } from '@angular/common';
@@ -52,15 +51,5 @@ export class LoginComponent {
         this.isLoading = false;
       }
     });
-  }
-
-  toggleLoginState() {
-    const isLoggedIn = !!localStorage.getItem('accessToken');
-    if (isLoggedIn) {
-      this.authService.logout();
-    } else {
-      this.authService.login();
-      this.router.navigate(['/home']);
-    }
   }
 }
