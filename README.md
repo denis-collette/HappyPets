@@ -22,6 +22,15 @@
 - 🖼 Share status updates, photos, and videos (coming soon)
 - 🔐 Privacy controls on user/pet profiles & event visibility
 
+### Navigation & Responsive UI
+
+- Sticky navbar with centered logo and brand typography
+- Responsive behavior:
+    - **Mobile/Tablet:** Burger menu toggles side panel with nav links and icon shortcuts (profile, chat, notifications)
+    - **Desktop:** Inline links with icon actions (dark mode, logout, etc.)
+- Dark/light mode toggle
+- Auto-close side menu on navigation or outside click
+
 ---
 
 ## 🧩 Future Features
@@ -40,9 +49,16 @@
 ### Frontend
 
 - **Angular** (v16+)
-- **Sass** for styling
+- **SASS** for styling
 - **Angular Router** for SPA navigation
 - **Angular Universal** (SSR enabled)
+
+#### Shared Services & State
+
+- **AuthService**: Tracks login state using `BehaviorSubject`
+- **AuthGuard**: Protects authenticated routes
+- **Auth Interceptor (upcoming)**: Automatically adds JWT token to secure API requests
+- **Proxy Configuration (upcoming)**: Simplifies local dev by routing API calls to Django backend
 
 ### Backend – Django (Python)
 
@@ -80,11 +96,9 @@ HappyPets/
 │   │   │   ├── _typography.sass
 │   │   │   └── _variables.sass
 │   │   ├── app/
-│   │   │   ├── AdminSettings/
-│   │   │   │   ├── login/          # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   ├── messages/       # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   ├── notifications/  # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   └── signup/         # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── api/
+│   │   │   │   ├── api.config.ts
+│   │   │   │   └── user.api.ts
 │   │   │   ├── Events/
 │   │   │   │   ├── eventcard/      # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   └── meet/           # Component: .html + .sass + .spec.ts + .ts
@@ -105,6 +119,11 @@ HappyPets/
 │   │   │   ├── Shared/
 │   │   │   │   ├── home/           # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   └── notfound        # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── UserSettings/
+│   │   │   │   ├── login/          # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── messages/       # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   ├── notifications/  # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── signup/         # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── app.component.html
 │   │   │   ├── app.component.sass
 │   │   │   ├── app.component.spec.ts
@@ -115,6 +134,9 @@ HappyPets/
 │   │   │   └── app.routes.ts
 │   │   ├── assets/
 │   │   │   └──...
+│   │   ├── environments/
+│   │   │   ├── environments.prod.ts
+│   │   │   └── environments.ts
 │   │   ├── index.html
 │   │   ├── main.server.ts
 │   │   ├── main.ts
@@ -213,6 +235,7 @@ Open your browser at [http://localhost:4200](http://localhost:4200)
 cd back/
 python -m venv env # On Linux, it might be python3
 source env/bin/activate  # On Windows use `env\Scripts\activate`
+# /!\ Make sure your python interpreter is the one in the newly created env /!\
 pip install -r requirements.txt
 # Don't forget to create a superuser if not done yet (should be done in shared DB): 
 python manage.py createsuperuser
@@ -281,3 +304,14 @@ Want to help grow the Happy Pets community?
 ## 📄 License
 
 MIT License
+
+---
+
+## Tech Stack References
+
+- [Angular](https://angular.io/)
+- [Django](https://www.djangoproject.com/)
+- [Django REST Framework](https://www.django-rest-framework.org/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [SASS (Indented Syntax)](https://sass-lang.com/documentation/syntax#the-indented-syntax)
+- [JWT Auth with SimpleJWT](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/)

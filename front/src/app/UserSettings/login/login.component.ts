@@ -4,32 +4,35 @@ import { HttpClient } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../../Services/auth.service';
 import { CommonModule } from '@angular/common';
+import { LoginResponse, UserApi } from '../../api/user.api';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.sass'],
+  styleUrl: './login.component.sass',
 })
+
 export class LoginComponent {
-  email: string = '';
+  username: string = '';
   password: string = '';
+  rememberMe: boolean = false;
   errorMessage: string = '';
+  isLoading: boolean = false;
+  showPassword: boolean = false;
 
   constructor(
-    private http: HttpClient,
+    private userApi: UserApi,
     private router: Router,
     private authService: AuthService
   ) {}
 
   onSubmit() {
     this.errorMessage = '';
+    this.isLoading = true;
 
-    this.http.post<{ access: string, refresh: string }>('/api/users/login', {
-      email: this.email,
-      password: this.password
-    }).subscribe({
+    this.userApi.login(this.username, this.password).subscribe({
       next: (res) => {
         localStorage.setItem('accessToken', res.access);
         localStorage.setItem('refreshToken', res.refresh);
@@ -37,8 +40,16 @@ export class LoginComponent {
         this.router.navigate(['/home']);
       },
       error: (err) => {
-        this.errorMessage = 'Invalid credentials. Please try again.';
         console.error('Login error:', err);
+        if (err.status === 401) {
+          this.errorMessage = 'Invalid username or password.';
+        } else {
+          this.errorMessage = 'An error occurred. Please try again later.';
+        }
+        this.isLoading = false;
+      },
+      complete: () => {
+        this.isLoading = false;
       }
     });
   }

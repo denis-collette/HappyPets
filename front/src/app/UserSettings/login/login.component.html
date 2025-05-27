@@ -1,0 +1,55 @@
+<h1>Log in</h1>
+<p>Welcome back! Please log in to your account.</p>
+
+<form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+    <label for="username">Username</label>
+    <input
+        type="text"
+        id="username"
+        [(ngModel)]="username"
+        name="username"
+        required
+        #usernameRef="ngModel"
+    />
+    <div *ngIf="usernameRef.invalid && usernameRef.touched" class="validation-error">
+        Username is required.
+    </div>
+
+    <label for="password">Password</label>
+    <div class="password-field">
+        <input
+            [type]="showPassword ? 'text' : 'password'"
+            id="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+            minlength="6"
+            #passwordRef="ngModel"
+        />
+        <button type="button" class="toggle-password" (click)="showPassword = !showPassword">
+            {{ showPassword ? 'Hide' : 'Show' }}
+        </button>
+    </div>
+    <div *ngIf="passwordRef.invalid && passwordRef.touched" class="validation-error">
+        Password is required (min 6 chars).
+    </div>
+
+    <label>
+        <input type="checkbox" [(ngModel)]="rememberMe" name="rememberMe" />
+        Remember me
+    </label>
+
+    <button type="submit" [disabled]="isLoading || loginForm.invalid">
+        <span *ngIf="isLoading" class="spinner"></span>
+        <span *ngIf="!isLoading">Log In</span>
+    </button>
+</form>
+
+<p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+
+<!-- Dev toggle button for testing -->
+<div>
+    <button (click)="toggleLoginState()" class="dev-toggle" title="Toggle login state">
+        🧪 Toggle Login
+    </button>
+</div>

@@ -32,22 +32,22 @@ export const routes: Routes = [
         canActivate: [authGuard]
     },
     { path: 'messages',
-        loadComponent: () => import('./AdminSettings/messages/messages.component')
+        loadComponent: () => import('./UserSettings/messages/messages.component')
         .then(m => m.MessagesComponent),
         canActivate: [authGuard]
     },
     { path: 'notifications',
-        loadComponent: () => import('./AdminSettings/notifications/notifications.component')
+        loadComponent: () => import('./UserSettings/notifications/notifications.component')
         .then(m => m.NotificationsComponent),
         canActivate: [authGuard]
     },
     { path: 'login',
-        loadComponent: () => import('./AdminSettings/login/login.component')
+        loadComponent: () => import('./UserSettings/login/login.component')
         .then(m => m.LoginComponent),
         canActivate: [publiconlyGuard]
     },
     { path: 'signup',
-        loadComponent: () => import('./AdminSettings/signup/signup.component')
+        loadComponent: () => import('./UserSettings/signup/signup.component')
         .then(m => m.SignupComponent),
         canActivate: [publiconlyGuard]
     },
