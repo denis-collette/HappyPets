@@ -42,12 +42,12 @@ export const routes: Routes = [
         canActivate: [authGuard]
     },
     { path: 'login',
-        loadComponent: () => import('./UserSettings/login/login.component')
+        loadComponent: () => import('./Shared/login/login.component')
         .then(m => m.LoginComponent),
         canActivate: [publiconlyGuard]
     },
     { path: 'signup',
-        loadComponent: () => import('./UserSettings/signup/signup.component')
+        loadComponent: () => import('./Shared/signup/signup.component')
         .then(m => m.SignupComponent),
         canActivate: [publiconlyGuard]
     },
