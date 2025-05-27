@@ -9,6 +9,7 @@ Then tackle login/signup polish while reusing your style foundation
 This will make building the rest of the frontend significantly easier and more consistent.
 
 ## 🔄 Style System Cleanup (Next Up)
+
 Goal: Ensure a clean, scalable SASS setup aligned with your mobile/tablet-first approach.
 
 Tasks:
@@ -27,6 +28,7 @@ Tasks:
 ⏩ Suggested start: clean up partials, establish a base foundation for forms, buttons, and layout.
 
 ## 🎨 UI Enhancements: Auth Pages
+
 Goal: Style and finalize login + signup pages
 
 Login Page:
@@ -50,6 +52,7 @@ Signup Page:
 ✅ Use existing AuthService and the same reactive patterns.
 
 ## 🔐 Route Protection & Authenticated API Calls
+
 Goal: Secure private routes and test real authenticated APIs.
 
 Tasks:
@@ -64,6 +67,7 @@ Tasks:
     - Logout on 401 if token is invalid
 
 ## 🧼 Frontend Buildout (Main Focus After Above)
+
 Goal: Shift focus to building core UI features & layouts.
 
 Suggested Features (to start):
@@ -80,6 +84,7 @@ Suggested Features (to start):
 Each feature can be a standalone component with its own route.
 
 ## 🧪 Testing Setup (Parallel or Later)
+
 Goal: Start building test coverage and CI foundation.
 
     - Unit tests for AuthService, userApi, and components
@@ -93,6 +98,7 @@ Goal: Start building test coverage and CI foundation.
     - Optional: Add GitHub Actions or similar for test automation
 
 ## 📚 API Documentation (Parallel with Frontend Buildout)
+
     - Use DRF's drf-yasg or drf-spectacular to generate OpenAPI docs
 
     - Document endpoints for login, register, profile, pets, friends, events
