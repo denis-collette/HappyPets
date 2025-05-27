@@ -22,9 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables from .env file
 
-env = environ.Env(
-    DEBUG=(bool, False)
-)
+env = environ.Env(DEBUG=(bool, False))
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
@@ -127,7 +125,7 @@ SIMPLE_JWT = {
 
 # CORS settings
 
-CORS_ALLOW_ALL_ORIGINS = env('CORS_ALLOW_ALL_ORIGINS')
+CORS_ALLOW_ALL_ORIGINS= env('CORS_ALLOW_ALL_ORIGINS', bool)
 
 
 # Password validation

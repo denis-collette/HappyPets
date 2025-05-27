@@ -88,6 +88,9 @@ HappyPets/
 │   │   │   ├── Events/
 │   │   │   │   ├── eventcard/      # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   └── meet/           # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── Guards/
+│   │   │   │   ├── auth.guard.ts
+│   │   │   │   └── publiconly.guard.ts
 │   │   │   ├── Human/
 │   │   │   │   ├── humancard/      # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   ├── myfriends/      # Component: .html + .sass + .spec.ts + .ts
@@ -96,10 +99,12 @@ HappyPets/
 │   │   │   ├── Pets/
 │   │   │   │   ├── mypets/         # Component: .html + .sass + .spec.ts + .ts
 │   │   │   │   └── petcard/        # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── searchbar/          # Component: .html + .sass + .spec.ts + .ts
+│   │   │   ├── Services/
+│   │   │   │   └── auth.service.ts
 │   │   │   ├── Shared/
 │   │   │   │   ├── home/           # Component: .html + .sass + .spec.ts + .ts
-│   │   │   │   └── not
-│   │   │   ├── searchbar/          # Component: .html + .sass + .spec.ts + .ts
+│   │   │   │   └── notfound        # Component: .html + .sass + .spec.ts + .ts
 │   │   │   ├── app.component.html
 │   │   │   ├── app.component.sass
 │   │   │   ├── app.component.spec.ts
@@ -124,11 +129,11 @@ HappyPets/
 │   │   ├── settings.py
 │   │   ├── urls.py
 │   │   └── wsgi.py
-│   ├── conversations/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views 
-│   ├── events/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views 
-│   ├── inbox/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
-│   ├── pets/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
-│   ├── users/ # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
+│   ├── conversations/  # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views 
+│   ├── events/         # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views 
+│   ├── inbox/          # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
+│   ├── pets/           # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
+│   ├── users/          # App: __pycache__ + migrations/ + __init__ + admin + apps + models + serializers + tests + urls + views
 │   ├── .gitignore
 │   ├── manage.py
 │   └── requirements.txt
