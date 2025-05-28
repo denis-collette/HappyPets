@@ -1,0 +1,131 @@
+@use './variables'
+@use './mixins'
+@use 'sass:color'
+
+:root
+  --color-primary: #{variables.$primary-color}
+  --color-secondary: #{variables.$secondary-color}
+  --color-accent: #{variables.$accent-color}
+  --color-background: #{variables.$background-color}
+  --color-text: #{variables.$text-color}
+  --color-surface: #{variables.$surface-color}
+  --color-heading: #{variables.$heading-color}
+  --color-button: #{variables.$button-color}
+  --color-button-text: #{variables.$button-text-color}
+  --color-button-hover: #{color.adjust(variables.$button-color, $lightness: -8%)}
+  --color-border: #{variables.$border-color}
+  --shadow: #{variables.$shadow}
+
+body.dark-theme
+  --color-primary: #{variables.$darktheme-primary-color}
+  --color-secondary: #{variables.$darktheme-secondary-color}
+  --color-accent: #{variables.$darktheme-accent-color}
+  --color-background: #{variables.$darktheme-background-color}
+  --color-text: #{variables.$darktheme-text-color}
+  --color-surface: #{variables.$darktheme-surface-color}
+  --color-heading: #{variables.$darktheme-heading-color}
+  --color-button: #{variables.$darktheme-button-color}
+  --color-button-text: #{variables.$darktheme-button-text-color}
+  --color-button-hover: #{color.adjust(variables.$darktheme-button-color, $lightness: -8%)}
+  --color-border: #{variables.$darktheme-border-color}
+  --shadow: #{variables.$darktheme-shadow}
+
+.show-mobile
+  display: block
+  .hidden
+    display: none !important
+
+@include mixins.respond-to(mobile)
+  .show-mobile
+    display: none
+
+.show-tablet
+  display: none
+  .hidden
+    display: none !important
+
+
+@include mixins.respond-to(tablet)
+  .show-tablet
+    display: block
+
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.container
+  padding: variables.$space-md
+  max-width: 100%
+  
+  @include mixins.respond-to(tablet)
+    max-width: 720px
+    margin: 0 auto
+
+  @include mixins.respond-to(desktop)
+    max-width: 1024px
+
+html
+  font-size: variables.$base-font-size
+
+body
+  background-color: var(--color-background)
+  color: var(--color-text)
+
+h1, h2, h3, h4, h5, h6
+  font-weight: bold
+  margin-bottom: variables.$space-sm
+
+p
+  margin-bottom: variables.$space-sm
+
+a
+  text-decoration: none
+  color: inherit
+
+ul
+  list-style: none
+
+img
+  max-width: 100%
+  height: auto
+  display: block
+
+button, input, textarea, .cta, .btn
+  font-family: inherit
+  font-size: inherit
+  border: none
+  outline: none
+
+button, .cta, .btn
+  cursor: pointer
+  background-color: var(--color-button)
+  color: var(--color-button-text)
+  border-radius: variables.$radius-md
+  padding: variables.$space-sm variables.$space-md
+  transition: background-color variables.$transition-default, color variables.$transition-default, opacity variables.$transition-fast
+
+  &:hover, &:focus
+    background-color: var(--color-button-hover)
+
+  &:disabled
+    opacity: 0.6
+    cursor: not-allowed
+
+
+fieldset
+  margin: 0
+  padding: 0
+  border: 0
+  min-inline-size: auto
+
+legend
+  padding: 0
+  font-size: inherit
+  font-weight: inherit
+
+label
+  display: inline-block
+  margin-bottom: variables.$space-xs
+  cursor: pointer
+  font-size: inherit

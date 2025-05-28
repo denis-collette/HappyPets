@@ -1,20 +1,6 @@
 @use './_styles/variables'
 @use './_styles/mixins'
-@use './_styles/base'
-@use './_styles/layout'
-@use './_styles/typography'
-@use './_styles/responsive'
-
-body
-  font-family: variables.$font-body
-  color: variables.$text-color
-
-h1, h2, h3, h4, h5, h6
-  font-family: variables.$font-heading
-
-button, .cta
-  font-family: variables.$font-cta
-  font-weight: bold
+@use './_styles/global'
 
 .font-brand
   font-family: variables.$font-brand
@@ -24,3 +10,21 @@ button, .cta
 
 .font-cta
   font-family: variables.$font-cta
+
+.text-brand
+  font-family: variables.$font-brand
+
+.text-heading
+  font-family: variables.$font-heading
+  font-size: variables.$font-lg
+  font-weight: bold
+
+.text-cta
+  font-family: variables.$font-cta
+  font-size: variables.$font-md
+  text-transform: uppercase
+  letter-spacing: 1px
+
+.text-body
+  font-family: variables.$font-body
+  font-size: variables.$font-sm

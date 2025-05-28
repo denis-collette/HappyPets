@@ -89,11 +89,8 @@ HappyPets/
 ├── front/
 │   ├── src/
 │   │   ├── _styles/
-│   │   │   ├── _base.sass
-│   │   │   ├── _layout.sass
+│   │   │   ├── _global.sass
 │   │   │   ├── _mixins.sass
-│   │   │   ├── _responsive.sass
-│   │   │   ├── _typography.sass
 │   │   │   └── _variables.sass
 │   │   ├── app/
 │   │   │   ├── api/

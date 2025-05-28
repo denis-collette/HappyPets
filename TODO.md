@@ -1,35 +1,8 @@
 # 🧭 HappyPets Project Roadmap (Updated)
 
-## 🛠 Recommended Next Step: Style System Cleanup
-
-Lock in a clean style system before you scale component UI
-
-Then tackle login/signup polish while reusing your style foundation
-
-This will make building the rest of the frontend significantly easier and more consistent.
-
-## 🔄 Style System Cleanup (Next Up)
-
-Goal: Ensure a clean, scalable SASS setup aligned with your mobile/tablet-first approach.
-
-Tasks:
-    - Review _styles/ contents
-
-    - Remove or consolidate unused partials
-
-    - Organize mixins, variables (colors, breakpoints, shadows, etc.)
-
-    - Standardize file naming (e.g. _mixins.sass, _variables.sass)
-
-    - Add utility mixins if missing (text-ellipsis, center-flex, etc.)
-
-    - Confirm dark/light mode toggle support is ready
-
-⏩ Suggested start: clean up partials, establish a base foundation for forms, buttons, and layout.
-
 ## 🎨 UI Enhancements: Auth Pages
 
-Goal: Style and finalize login + signup pages
+Goal: Style and finalize login + signup (+navbar) pages
 
 Login Page:
     - Apply brand styling (colors, padding, spacing)

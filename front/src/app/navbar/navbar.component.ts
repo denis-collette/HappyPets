@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.sub = this.authService.isLoggedIn$.subscribe(
       (status) => (this.isLoggedIn = status)
     );
+    this.isDarkMode = document.body.classList.contains('dark-theme');
   }
 
   ngOnDestroy(): void {
@@ -37,12 +38,9 @@ export class NavbarComponent implements OnInit, OnDestroy {
     this.menuOpen = !this.menuOpen;
   }
 
-  toggleDarkMode() {
+  toggleDarkMode(): void {
     this.isDarkMode = !this.isDarkMode;
-    const root = document.documentElement;
-    this.isDarkMode
-      ? root.classList.add('dark-mode')
-      : root.classList.remove('dark-mode');
+    document.body.classList.toggle('dark-theme', this.isDarkMode);
   }
 
   logout() {
